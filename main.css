@@ -1,0 +1,22 @@
+header {
+    background-color: #0C6291;
+    text-align: center;
+    padding: 1rem;
+    font-size: 30px;
+    color:aliceblue;
+}
+h2 {
+    text-align: left;
+    font-size: 25px;
+    font-weight: bolder;
+}
+body {
+    padding: 1rem;
+}
+ul {
+    font-size: 22px;
+}
+button {
+    margin: 20px;
+    font-size: larger;
+}

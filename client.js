@@ -51,7 +51,7 @@ console.log('should be 0:', longTermBonus(10000));
 
 
 function employeeIncome(annualSalary) {
-  annualSalary = parseInt(annualSalary);
+  annualSalary = Number(annualSalary);
   console.log(annualSalary);
   if (annualSalary > 65000) {
     return -1;
@@ -104,13 +104,13 @@ function bonusCap(bonusPer) {
 function totalBonusPer(employeeNumber, annualSalary, reviewRating) {
   let bonusPer = 0;
   bonusPer += longTermBonus(employeeNumber);
-  console.log(bonusPer);
+  console.log('long term bonus', bonusPer);
   bonusPer += employeeIncome(annualSalary);
-  console.log(bonusPer);
+  console.log(' bonus per:', bonusPer);
   bonusPer += employeeRatingBonus(reviewRating);
-  console.log(bonusPer);
+  console.log('rating bonus', bonusPer);
   bonusPer = bonusCap(bonusPer);
-  console.log(bonusPer);
+  console.log('bonus per after cap:', bonusPer);
   return bonusPer;
 }
 console.log('Mayella', totalBonusPer('89068', '35000', 1));
@@ -158,7 +158,7 @@ function readyNow() {
 console.log('Employee compensation:', employeeCompensation(employees));
 let compensation = employeeCompensation(employees);
 for (let i =0; i < compensation.length; i++) {
-  $('.bonuses').append(`<li>Name: ${compensation[i].name}   Bonus Percentage: ${compensation[i].bonusPercentage}   Total compensation: ${compensation[i].totalCompensation}   Total bonus: ${compensation[i].bonus})</li>`);
+  $('.bonuses').append(`<li>Name: ${compensation[i].name}   Bonus Percentage: ${compensation[i].bonusPercentage}   Total compensation: ${compensation[i].totalCompensation}   Total bonus: ${compensation[i].totalBonus}</li>`);
 }
 }
 
