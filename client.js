@@ -1,3 +1,4 @@
+$( document).ready(readyNow);
 const employees = [
   {
     name: 'Atticus',
@@ -153,9 +154,13 @@ function employeeCompensation(array) {
 
 }
 
+function readyNow() {
 console.log('Employee compensation:', employeeCompensation(employees));
 let compensation = employeeCompensation(employees);
-for (let i )
+for (let i =0; i < compensation.length; i++) {
+  $('.bonuses').append(`<li>Name: ${compensation[i].name}   Bonus Percentage: ${compensation[i].bonusPercentage}   Total compensation: ${compensation[i].totalCompensation}   Total bonus: ${compensation[i].bonus})</li>`);
+}
+}
 
 
 // Take small steps! Don't write a for loop and two functions that do all of the calculations right away.
